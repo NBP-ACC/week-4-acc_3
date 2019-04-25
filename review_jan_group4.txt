@@ -1,0 +1,17 @@
+Code Review by Jan for Group 4
+
+parameter_list.py:
+- in line 82 you should have used the variable directory instead of using PATH+'/Data', which adds some redundancy. You can concatenate the relative path with os.path.join()
+- Furthermore, you could leave out the if, if you used os.makedirs() with parameter exist_ok=True
+See here for further info: https://docs.python.org/3.6/library/os.html#os.makedirs
+
+
+main_experiment.py
+in writeData(), line 84:
+- The naming is not done perfectly as asked by the task: argument subID in writeData has to include 'Sub' to follow the naming convention Sub[subID].csv. You could have used something like "Sub{}.csv".format(subID)
+- Nice solution to just write the pandas-dataframe as a csv-file!
+
+For working with git, it is always encouraged to use very clear commit messagees and rather do small commits with one purpose than a single huge commit after you finished your work. I say that, because "TAH_sub1_sub2_main_para" is not a very clear description of what the changes were.
+
+
+Good overall code structure!
